@@ -116,7 +116,7 @@ export default {
         },
      
 del(id){
-    alert(id +"id");
+    
     if(!confirm("Are you sure?")){
             return;
           }
