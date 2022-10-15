@@ -109,7 +109,8 @@ export default {
           if(!confirm("Are you sure?")){
             return;
           }
-         
+          
+          axios.delete('http://localhost:4000/api/project/allfromuser/'+id);
           
           axios.delete('http://localhost:4000/api/Client/'+id)
           .then((res)=>{
