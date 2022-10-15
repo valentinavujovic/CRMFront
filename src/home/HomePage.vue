@@ -19,9 +19,11 @@
 </template>
 
 <script>
+import { sha256} from 'js-sha256';
 import { userService, authenticationService } from '@/_services';
 import axios from 'axios';
 export default {
+ 
     data () {
         return {
             currentUser: authenticationService.currentUserValue,
@@ -31,6 +33,7 @@ export default {
     
     },
     methods:{
+      
         da(id){
         if(id==0){
             return 'Admin';
@@ -39,8 +42,9 @@ export default {
         }
         },
         chan(ro,id,pass,namee,emaill){
+            
            var password=prompt("Enter your password");
-            if(pass==password){
+            if(pass== sha256(password)){
                var newpass=prompt("Enter new password");
             }else{
                 alert("Incorect password, try again");
